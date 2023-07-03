@@ -18,7 +18,7 @@ app.use(cors());
 app.use(router);
 
 app.get('/', (req, res) => {
-    return res.render("Express Api ");
+    return res.send("Express Api ");
 })
 
 // middlewares después de las rutas
