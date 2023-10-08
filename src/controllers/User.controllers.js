@@ -7,10 +7,10 @@ const getAllUsers = catchError(async (req, res) => {
 });
 
 const createUser = catchError(async (req, res) => {
-  const { firstName, lastName, email, password, birthday } = req.body;
+  const { first_Name, last_Name, email, password, birthday } = req.body;
   const newUser = await user.create({
-    firstName,
-    lastName,
+    first_Name,
+    last_Name,
     email,
     password,
     birthday,
@@ -32,9 +32,9 @@ const deleteUser = catchError(async (req, res) => {
 
 const updateUser = catchError(async (req, res) => {
   const { id } = req.params;
-  const { firstName, lastName, email, password, birthday } = req.body;
+  const { first_Name, last_Name, email, password, birthday } = req.body;
   const userIdDelete = await user.update(
-    { firstName, lastName, email, password, birthday },
+    { first_Name, last_Name, email, password, birthday },
     { where: { id }, returning: true }
   );
   return res.json(userIdDelete[1][0]);
