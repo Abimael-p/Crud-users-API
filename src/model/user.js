@@ -8,11 +8,11 @@ const user = sequelize.define("user", {
     primaryKey: true,
     defaultValue: () => uuidv4().slice(0, 10),
   },
-  first_name: {
+  first_Name: {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
-  last_name: {
+  last_Name: {
     type: DataTypes.STRING(100),
     allowNull: false,
   },
